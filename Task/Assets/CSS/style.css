@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.menu_bg {
+    background-color: #00147d;
+}
+
+.color1 {
+    color: #00147d;
+}
+
+/*    Navbar CSS     */
+.navbar .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.nav-item .nav-link::after {
+    content: "";
+    width: 1px;
+    height: 40px;
+    background-color: #55b5e9;
+    border: none !important;
+    vertical-align: text-top;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.nav-item:last-child .nav-link::after {
+    content: none;
+}
+
+.nav-item .nav-link:hover .menu_item,
+.nav-item .nav-link.show .menu_item,
+.dropdown-menu .dropdown-item:hover .color1 {
+    color: #55b5e9;
+}
+
+.menu_item {
+    max-width: 100px;
+    text-wrap: wrap;
+}
+
+/*     Search icon CSS    */
+.search-click {
+    outline: none;
+    background-image: url('https://img.icons8.com/?size=100&id=132&format=png&color=000000');
+    background-repeat: no-repeat;
+    background-color: orange;
+    background-size: 22px;
+    background-position: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.5s;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid;
+    border-radius: 100%;
+    margin-left: -4px;
+    margin-top: -4px;
+}
+
+.search-click ::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 3px;
+    width: 2px;
+    height: 8px;
+    background: currentColor;
+    transform: rotate(-45deg);
+    top: 10px;
+    left: 12px
+}
+
+.search-click:focus {
+    width: 225px;
+    padding-left: 50px;
+}
+
+.search-click input {
+    background: transparent;
+    border: 1px solid #ccc;
+    outline: none;
+    position: absolute;
+    width: 225px;
+    height: 30px;
+    left: 0%;
+    padding: 10px;
+}
+
+/* .bg {
+    background-image: url('../SVG/bg.svg');
+} */
+
+/* toggle button */
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns%3D"http%3A//www.w3.org/2000/svg" viewBox%3D"0 0 30 30"%3E%3Cpath stroke%3D"rgba%28255, 255, 255, 0.5%29" stroke-width%3D"2" stroke-linecap%3D"round" stroke-miterlimit%3D"10" d%3D"M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+.navbar-toggler-icon.close {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns%3D"http%3A//www.w3.org/2000/svg" viewBox%3D"0 0 30 30"%3E%3Cpath stroke%3D"rgba%28255, 255, 255, 0.5%29" stroke-width%3D"2" stroke-linecap%3D"round" stroke-miterlimit%3D"10" d%3D"M6 6l18 18M6 24L24 6"/%3E%3C/svg%3E');
+}
+
+@media screen and (max-width:768px) {
+    .dropdown .dropdown-toggle::after {
+        float: right;
+        display: inline-flex;
+    }
+
+    .nav-item .nav-link::after {
+        content: none;
+    }
+
+    .nav-item {
+        border-bottom: 1px solid #55b5e9;
+    }
+
+    .menu_item {
+        max-width: none;
+        text-wrap: nowrap;
+    }
+
+    /* Custom arrow for dropdown */
+    .nav-item.dropdown .nav-link.custom_arrow::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.0001 1.5L6.8001 5.5L11.6001 1.5' stroke='%23737373' stroke-width='2.14815' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+    }
+
+    .custom_arrow[aria-expanded="true"]::after {
+        transform: rotate(180deg);
+    }
+
+    /*          sticky position    */
+    .sticky {
+        position: fixed;
+        top: 0;
+        z-index: 1020;
+    }
+
+    .mobile_scroll {
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .mobile_scroll::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #F5F5F5;
+    }
+
+    .mobile_scroll::-webkit-scrollbar {
+        width: 5px;
+        background-color: #fff;
+    }
+
+    .mobile_scroll::-webkit-scrollbar-thumb {
+        background-color: blue;
+        border: 1px solid #555555;
+    }
+}
+
+@media (min-width:768px) {
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown-menu:hover {
+        display: block;
+        left: 0;
+        top: 90%;
+    }
+
+}
